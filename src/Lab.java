@@ -50,7 +50,7 @@ class Fence
         width = w;
     }    
     
-    public int calculateFenceTotalLength()
+    public void calculateFenceTotalLength()
     {
         return (length * 2 + width * 2) * 2;
     }
