@@ -1,4 +1,4 @@
-public class Lab // NO CHANGES NEEDED
+public class Lab  // NO CHANGES NEEDED        
 {
 	public static void main(String[] args) {
 		DogPark d = new DogPark();
@@ -53,7 +53,7 @@ class Fence
     
     public int calculateFenceTotalLength()
     {
-        return (length * 2 + width * 2) * 2;
+        return (length * 2 + width * 2) * 2;  // NO CHANGES NEEDED        
     }
 }
 
@@ -73,7 +73,7 @@ class GrassArea
 
     public int calculateGrassSeedAmount()
     {
-        return length * width * 4;
+        return length * width * 4;  // NO CHANGES NEEDED        
     }    
     
 }
