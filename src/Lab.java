@@ -1,7 +1,6 @@
-public class Lab  // NO CHANGES NEEDED
+public class Lab // NO CHANGES NEEDED
 {
-	public static void main(String[] args) 
-    {
+	public static void main(String[] args) {
 		DogPark d = new DogPark();
 		d.setLength(5);
 		d.setWidth(7);
@@ -13,7 +12,7 @@ class DogPark
 {
     private Fence outerFence = new Fence();
     private GrassArea grassyArea = new GrassArea();
-    private int length;
+    public int length;
     private int width;
     
     public void setLength(int l)
@@ -21,36 +20,38 @@ class DogPark
         length = l; 
     }
     
-    public void setWidth(int w)
+    private void setWidth(int w)
     {
         width = w;
     }
     
     public String reportMaterials()
     {
-        outerFence.setLength(length);
         outerFence.setWidth(width);
+        outerFence.setLength(length);
+        grassyArea.setWidth(width);
         grassyArea.setLength(length);
         int totalFenceLength  = outerFence.calculateFenceTotalLength();
         int grassSeedNeeded = grassyArea.calculateGrassSeedAmount();
-        return "Needs " + totalFenceLength+ " feet of fence material and " + grassSeedNeeded; 	// NO CHANGES NEEDED
+        return "Needs " + totalFenceLength+ " feet of fence material and " + grassSeedNeeded + " pounds of grass seed"; 	// NO CHANGES NEEDED        
     }
 }
 
 class Fence
 {
+    private int length;
     private int width;
     public void setLength(int l)
     {
         length = l; 
     }
     
-    public void setWidth(int w)
+    public void setWidth()
     {
         width = w;
     }    
     
-    public void calculateFenceTotalLength()
+    public int calculateFenceTotalLength()
     {
         return (length * 2 + width * 2) * 2;
     }
@@ -65,6 +66,11 @@ class GrassArea
         length = l; 
     }
     
+    public void setWidth(int w)
+    {
+        width = w;
+    }
+
     public int calculateGrassSeedAmount()
     {
         return length * width * 4;
